@@ -1,0 +1,57 @@
+name: Build
+
+# Compila MinIO (server + mc) dal sorgente upstream e pubblica ghcr.io/jarvit/minio.
+# Sulle PR compila soltanto (nessun push): verifica che il sorgente pinnato sia ancora
+# raggiungibile e compilabile. Su main e a mano pubblica il tag.
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+concurrency:
+  group: build-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  packages: write
+
+env:
+  # Deve coincidere con MINIO_RELEASE nel Dockerfile.
+  MINIO_RELEASE: RELEASE.2025-09-07T16-13-09Z
+
+jobs:
+  build:
+    name: Build MinIO image
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Tag del Dockerfile allineato al workflow
+        run: grep -q "^ARG MINIO_RELEASE=${MINIO_RELEASE}$" Dockerfile
+
+      - name: Set up Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Login GHCR
+        if: github.event_name != 'pull_request'
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build (e push fuori dalle PR)
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          platforms: linux/amd64,linux/arm64
+          push: ${{ github.event_name != 'pull_request' }}
+          tags: ghcr.io/${{ github.repository_owner }}/minio:${{ env.MINIO_RELEASE }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
