@@ -4,7 +4,7 @@ name: Build
 # ghcr.io/jarvit/minio. Su ogni PR e su main esegue i test delle patch (stage `test` del
 # Dockerfile) e compila l'immagine; su main e a mano la pubblica, se il tag non esiste
 # gia', e allega all'immagine il documento OpenVEX firmato (cosign keyless, identita'
-# OIDC di questo workflow).
+# OIDC di questo workflow), completando l'allegato dove manca anche per un tag esistente.
 
 on:
   pull_request:
