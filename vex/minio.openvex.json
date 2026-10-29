@@ -1,0 +1,323 @@
+{
+  "@context": "https://openvex.dev/ns/v0.2.0",
+  "@id": "https://github.com/jarvit/minio-image/vex/RELEASE.2025-10-15T17-29-55Z-jarvit.1",
+  "author": "jarvit/minio-image",
+  "role": "Document Creator",
+  "timestamp": "2026-10-29T22:58:24Z",
+  "version": 1,
+  "tooling": "vex/render.sh",
+  "statements": [
+    {
+      "vulnerability": {
+        "name": "CVE-2026-33322",
+        "aliases": [
+          "GHSA-5cx5-wh4m-82fh"
+        ]
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/minio@sha256:d70a664e2aa41c531156799d0fc817f078a4015e5d120aa4a47171e057680fde?repository_url=ghcr.io/jarvit/minio",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/github.com/minio/minio"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/minio@sha256:3b4275255a16da4ca72969d6d5d333f0aef3373bce5b665a90385ac79a0483c3?repository_url=ghcr.io/jarvit/minio",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/github.com/minio/minio"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/minio@sha256:ca3e221c7a5d3288fb868405947735d0692f605588ecb1657bc817f7545e5506?repository_url=ghcr.io/jarvit/minio",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/github.com/minio/minio"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/minio@sha256:d6dc50dd003e21c86a4c55f7ee3e34203799e39ccc653b0e2fbd5839e57da8d8?repository_url=ghcr.io/jarvit/minio",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/github.com/minio/minio"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/minio@sha256:2a125f66c0df61459adaa78939a390b32ad63b07ff6eee312ca11d88860c9dab?repository_url=ghcr.io/jarvit/minio",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/github.com/minio/minio"
+            }
+          ]
+        }
+      ],
+      "status": "fixed",
+      "status_notes": "Gli id_token firmati in HMAC con il client secret sono rifiutati: sono ammessi solo algoritmi asimmetrici verificati con il JWKS del provider. Patch: https://github.com/jarvit/minio-image/blob/main/patches/0005-CVE-2026-33322-oidc-reject-hmac-id-token.patch"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-33419",
+        "aliases": [
+          "GHSA-jv87-32hw-hh99"
+        ]
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/minio@sha256:d70a664e2aa41c531156799d0fc817f078a4015e5d120aa4a47171e057680fde?repository_url=ghcr.io/jarvit/minio",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/github.com/minio/minio"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/minio@sha256:3b4275255a16da4ca72969d6d5d333f0aef3373bce5b665a90385ac79a0483c3?repository_url=ghcr.io/jarvit/minio",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/github.com/minio/minio"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/minio@sha256:ca3e221c7a5d3288fb868405947735d0692f605588ecb1657bc817f7545e5506?repository_url=ghcr.io/jarvit/minio",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/github.com/minio/minio"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/minio@sha256:d6dc50dd003e21c86a4c55f7ee3e34203799e39ccc653b0e2fbd5839e57da8d8?repository_url=ghcr.io/jarvit/minio",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/github.com/minio/minio"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/minio@sha256:2a125f66c0df61459adaa78939a390b32ad63b07ff6eee312ca11d88860c9dab?repository_url=ghcr.io/jarvit/minio",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/github.com/minio/minio"
+            }
+          ]
+        }
+      ],
+      "status": "fixed",
+      "status_notes": "Login LDAP con errore unico per utente inesistente e password errata e limite ai tentativi falliti per utente e indirizzo e per utente. Patch: https://github.com/jarvit/minio-image/blob/main/patches/0006-CVE-2026-33419-ldap-uniform-error-rate-limit.patch"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-34204",
+        "aliases": [
+          "GHSA-3rh2-v3gr-35p9"
+        ]
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/minio@sha256:d70a664e2aa41c531156799d0fc817f078a4015e5d120aa4a47171e057680fde?repository_url=ghcr.io/jarvit/minio",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/github.com/minio/minio"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/minio@sha256:3b4275255a16da4ca72969d6d5d333f0aef3373bce5b665a90385ac79a0483c3?repository_url=ghcr.io/jarvit/minio",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/github.com/minio/minio"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/minio@sha256:ca3e221c7a5d3288fb868405947735d0692f605588ecb1657bc817f7545e5506?repository_url=ghcr.io/jarvit/minio",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/github.com/minio/minio"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/minio@sha256:d6dc50dd003e21c86a4c55f7ee3e34203799e39ccc653b0e2fbd5839e57da8d8?repository_url=ghcr.io/jarvit/minio",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/github.com/minio/minio"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/minio@sha256:2a125f66c0df61459adaa78939a390b32ad63b07ff6eee312ca11d88860c9dab?repository_url=ghcr.io/jarvit/minio",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/github.com/minio/minio"
+            }
+          ]
+        }
+      ],
+      "status": "fixed",
+      "status_notes": "Le intestazioni di replica diventano metadati interni solo nelle richieste di replica, che richiedono s3:ReplicateObject. Patch: https://github.com/jarvit/minio-image/blob/main/patches/0004-CVE-2026-34204-replication-headers-permission.patch"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-39414",
+        "aliases": [
+          "GHSA-h749-fxx7-pwpg"
+        ]
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/minio@sha256:d70a664e2aa41c531156799d0fc817f078a4015e5d120aa4a47171e057680fde?repository_url=ghcr.io/jarvit/minio",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/github.com/minio/minio"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/minio@sha256:3b4275255a16da4ca72969d6d5d333f0aef3373bce5b665a90385ac79a0483c3?repository_url=ghcr.io/jarvit/minio",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/github.com/minio/minio"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/minio@sha256:ca3e221c7a5d3288fb868405947735d0692f605588ecb1657bc817f7545e5506?repository_url=ghcr.io/jarvit/minio",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/github.com/minio/minio"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/minio@sha256:d6dc50dd003e21c86a4c55f7ee3e34203799e39ccc653b0e2fbd5839e57da8d8?repository_url=ghcr.io/jarvit/minio",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/github.com/minio/minio"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/minio@sha256:2a125f66c0df61459adaa78939a390b32ad63b07ff6eee312ca11d88860c9dab?repository_url=ghcr.io/jarvit/minio",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/github.com/minio/minio"
+            }
+          ]
+        }
+      ],
+      "status": "fixed",
+      "status_notes": "La lettura di una riga CSV in S3 Select e' limitata a 1 MiB, oltre risponde OverMaxRecordSize. Patch: https://github.com/jarvit/minio-image/blob/main/patches/0001-CVE-2026-39414-s3select-csv-record-limit.patch"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-40344",
+        "aliases": [
+          "GHSA-9c4q-hq6p-c237"
+        ]
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/minio@sha256:d70a664e2aa41c531156799d0fc817f078a4015e5d120aa4a47171e057680fde?repository_url=ghcr.io/jarvit/minio",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/github.com/minio/minio"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/minio@sha256:3b4275255a16da4ca72969d6d5d333f0aef3373bce5b665a90385ac79a0483c3?repository_url=ghcr.io/jarvit/minio",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/github.com/minio/minio"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/minio@sha256:ca3e221c7a5d3288fb868405947735d0692f605588ecb1657bc817f7545e5506?repository_url=ghcr.io/jarvit/minio",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/github.com/minio/minio"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/minio@sha256:d6dc50dd003e21c86a4c55f7ee3e34203799e39ccc653b0e2fbd5839e57da8d8?repository_url=ghcr.io/jarvit/minio",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/github.com/minio/minio"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/minio@sha256:2a125f66c0df61459adaa78939a390b32ad63b07ff6eee312ca11d88860c9dab?repository_url=ghcr.io/jarvit/minio",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/github.com/minio/minio"
+            }
+          ]
+        }
+      ],
+      "status": "fixed",
+      "status_notes": "PutObjectExtract verifica la firma anche con STREAMING-UNSIGNED-PAYLOAD-TRAILER. Patch: https://github.com/jarvit/minio-image/blob/main/patches/0003-CVE-2026-40344-extract-unsigned-trailer-signature.patch"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-41145",
+        "aliases": [
+          "GHSA-hv4r-mvr4-25vw"
+        ]
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/minio@sha256:d70a664e2aa41c531156799d0fc817f078a4015e5d120aa4a47171e057680fde?repository_url=ghcr.io/jarvit/minio",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/github.com/minio/minio"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/minio@sha256:3b4275255a16da4ca72969d6d5d333f0aef3373bce5b665a90385ac79a0483c3?repository_url=ghcr.io/jarvit/minio",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/github.com/minio/minio"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/minio@sha256:ca3e221c7a5d3288fb868405947735d0692f605588ecb1657bc817f7545e5506?repository_url=ghcr.io/jarvit/minio",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/github.com/minio/minio"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/minio@sha256:d6dc50dd003e21c86a4c55f7ee3e34203799e39ccc653b0e2fbd5839e57da8d8?repository_url=ghcr.io/jarvit/minio",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/github.com/minio/minio"
+            }
+          ]
+        },
+        {
+          "@id": "pkg:oci/minio@sha256:2a125f66c0df61459adaa78939a390b32ad63b07ff6eee312ca11d88860c9dab?repository_url=ghcr.io/jarvit/minio",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/github.com/minio/minio"
+            }
+          ]
+        }
+      ],
+      "status": "fixed",
+      "status_notes": "Con STREAMING-UNSIGNED-PAYLOAD-TRAILER la firma e' verificata per ogni sorgente di credenziali, anche la query. Patch: https://github.com/jarvit/minio-image/blob/main/patches/0002-CVE-2026-41145-unsigned-trailer-query-signature.patch"
+    }
+  ]
+}

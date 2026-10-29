@@ -5,8 +5,16 @@ dal sorgente upstream, con le patch di sicurezza di [`patches/`](patches/) appli
 del server e le dipendenze Go con correzioni di sicurezza alzate.
 
 ```
-ghcr.io/jarvit/minio:RELEASE.2025-10-15T17-29-55Z-jarvit.1
+ghcr.io/jarvit/minio:RELEASE.2025-10-15T17-29-55Z-jarvit.1@sha256:d70a664e2aa41c531156799d0fc817f078a4015e5d120aa4a47171e057680fde
 ```
+
+| Piattaforma | Digest |
+|---|---|
+| indice multi-architettura | `sha256:d70a664e2aa41c531156799d0fc817f078a4015e5d120aa4a47171e057680fde` |
+| linux/amd64 | `sha256:3b4275255a16da4ca72969d6d5d333f0aef3373bce5b665a90385ac79a0483c3` |
+| linux/arm64 | `sha256:ca3e221c7a5d3288fb868405947735d0692f605588ecb1657bc817f7545e5506` |
+
+Avviso di sicurezza del repository: [GHSA-4fjj-vxcc-m5rw](https://github.com/jarvit/minio-image/security/advisories/GHSA-4fjj-vxcc-m5rw).
 
 Il tag `RELEASE.2025-10-15T17-29-55Z` (senza suffisso) resta pubblicato com'era: e' la release
 upstream senza patch, esposta alle vulnerabilita' elencate sotto.
