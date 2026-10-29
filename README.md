@@ -151,7 +151,8 @@ Trivy non verifica la firma del VEX scoperto con `--vex oci`: la verifica e' il 
 
 Il workflow `.github/workflows/build.yml` esegue i test delle patch e compila su ogni PR; su
 `main` o a mano pubblica il tag, se non esiste gia', e allega il VEX firmato. Un tag gia'
-pubblicato non si sovrascrive. In locale:
+pubblicato non si sovrascrive; il VEX si allega dove manca anche a un tag esistente, quindi un
+run fallito durante la firma si completa rieseguendo il workflow. In locale:
 
 ```bash
 docker buildx build --platform linux/amd64,linux/arm64 -t minio:local .
