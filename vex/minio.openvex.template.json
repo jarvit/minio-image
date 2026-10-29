@@ -1,0 +1,77 @@
+{
+  "@context": "https://openvex.dev/ns/v0.2.0",
+  "@id": "",
+  "author": "jarvit/minio-image",
+  "role": "Document Creator",
+  "timestamp": "",
+  "version": 1,
+  "tooling": "vex/render.sh",
+  "statements": [
+    {
+      "vulnerability": {
+        "name": "CVE-2026-33322",
+        "aliases": [
+          "GHSA-5cx5-wh4m-82fh"
+        ]
+      },
+      "products": [],
+      "status": "fixed",
+      "status_notes": "Gli id_token firmati in HMAC con il client secret sono rifiutati: sono ammessi solo algoritmi asimmetrici verificati con il JWKS del provider. Patch: https://github.com/jarvit/minio-image/blob/main/patches/0005-CVE-2026-33322-oidc-reject-hmac-id-token.patch"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-33419",
+        "aliases": [
+          "GHSA-jv87-32hw-hh99"
+        ]
+      },
+      "products": [],
+      "status": "fixed",
+      "status_notes": "Login LDAP con errore unico per utente inesistente e password errata e limite ai tentativi falliti per utente e indirizzo e per utente. Patch: https://github.com/jarvit/minio-image/blob/main/patches/0006-CVE-2026-33419-ldap-uniform-error-rate-limit.patch"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-34204",
+        "aliases": [
+          "GHSA-3rh2-v3gr-35p9"
+        ]
+      },
+      "products": [],
+      "status": "fixed",
+      "status_notes": "Le intestazioni di replica diventano metadati interni solo nelle richieste di replica, che richiedono s3:ReplicateObject. Patch: https://github.com/jarvit/minio-image/blob/main/patches/0004-CVE-2026-34204-replication-headers-permission.patch"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-39414",
+        "aliases": [
+          "GHSA-h749-fxx7-pwpg"
+        ]
+      },
+      "products": [],
+      "status": "fixed",
+      "status_notes": "La lettura di una riga CSV in S3 Select e' limitata a 1 MiB, oltre risponde OverMaxRecordSize. Patch: https://github.com/jarvit/minio-image/blob/main/patches/0001-CVE-2026-39414-s3select-csv-record-limit.patch"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-40344",
+        "aliases": [
+          "GHSA-9c4q-hq6p-c237"
+        ]
+      },
+      "products": [],
+      "status": "fixed",
+      "status_notes": "PutObjectExtract verifica la firma anche con STREAMING-UNSIGNED-PAYLOAD-TRAILER. Patch: https://github.com/jarvit/minio-image/blob/main/patches/0003-CVE-2026-40344-extract-unsigned-trailer-signature.patch"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-41145",
+        "aliases": [
+          "GHSA-hv4r-mvr4-25vw"
+        ]
+      },
+      "products": [],
+      "status": "fixed",
+      "status_notes": "Con STREAMING-UNSIGNED-PAYLOAD-TRAILER la firma e' verificata per ogni sorgente di credenziali, anche la query. Patch: https://github.com/jarvit/minio-image/blob/main/patches/0002-CVE-2026-41145-unsigned-trailer-query-signature.patch"
+    }
+  ]
+}
