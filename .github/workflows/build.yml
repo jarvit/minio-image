@@ -29,7 +29,7 @@ permissions:
 env:
   # Devono coincidere con MINIO_RELEASE e IMAGE_TAG nel Dockerfile.
   MINIO_RELEASE: RELEASE.2025-10-15T17-29-55Z
-  IMAGE_TAG: RELEASE.2025-10-15T17-29-55Z-jarvit.1
+  IMAGE_TAG: RELEASE.2025-10-15T17-29-55Z-jarvit.2
   IMAGE: ghcr.io/${{ github.repository_owner }}/minio
 
 jobs:

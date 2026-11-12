@@ -16,7 +16,7 @@
 ARG MINIO_RELEASE=RELEASE.2025-10-15T17-29-55Z
 ARG MINIO_COMMIT=9e49d5e7a648f00e26f2246f4dc28e6b07f8c84a
 # Tag dell'immagine: la release upstream piu' il numero di revisione delle patch.
-ARG IMAGE_TAG=RELEASE.2025-10-15T17-29-55Z-jarvit.1
+ARG IMAGE_TAG=RELEASE.2025-10-15T17-29-55Z-jarvit.2
 ARG MC_RELEASE=RELEASE.2025-08-13T08-35-41Z
 ARG MC_COMMIT=7394ce0dd2a80935aded936b09fa12cbb3cb8096
 
@@ -31,7 +31,7 @@ ENV CGO_ENABLED=0
 # upstream: si alzano prima della compilazione, con un solo `go get` perche' la
 # risoluzione congiunta non riabbassi un modulo gia' alzato (il sorgente resta quello
 # del commit; i moduli che un binario non usa li toglie `go mod tidy`).
-ARG GO_SECURITY_BUMPS="google.golang.org/grpc@v1.84.0 github.com/rabbitmq/amqp091-go@v1.13.0 golang.org/x/crypto@v0.58.0 golang.org/x/net@v0.61.0 golang.org/x/text@v0.43.0 github.com/klauspost/compress@v1.18.7 github.com/go-jose/go-jose/v4@v4.1.6 github.com/buger/jsonparser@v1.1.2 github.com/apache/thrift@v0.24.0 go.opentelemetry.io/otel/sdk@v1.47.0 github.com/prometheus/prometheus@v0.311.3"
+ARG GO_SECURITY_BUMPS="google.golang.org/grpc@v1.84.0 github.com/rabbitmq/amqp091-go@v1.13.0 golang.org/x/crypto@v0.58.0 golang.org/x/net@v0.62.0 golang.org/x/text@v0.43.0 github.com/klauspost/compress@v1.18.7 github.com/go-jose/go-jose/v4@v4.1.6 github.com/buger/jsonparser@v1.1.2 github.com/apache/thrift@v0.24.0 go.opentelemetry.io/otel/sdk@v1.47.0 github.com/prometheus/prometheus@v0.311.3"
 
 RUN apk add --no-cache git ca-certificates
 
