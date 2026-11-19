@@ -38,11 +38,11 @@ release community, la corregge con patch proprie e la pubblica su GHCR.
 
 | Componente | Release | Commit upstream |
 |---|---|---|
-| server `minio` | `RELEASE.2025-10-15T17-29-55Z` + patch `-jarvit.2` | [`9e49d5e7`](https://github.com/minio/minio/commit/9e49d5e7a648f00e26f2246f4dc28e6b07f8c84a) |
+| server `minio` | `RELEASE.2025-10-15T17-29-55Z` + patch `-jarvit.3` | [`9e49d5e7`](https://github.com/minio/minio/commit/9e49d5e7a648f00e26f2246f4dc28e6b07f8c84a) |
 | client `mc` | `RELEASE.2025-08-13T08-35-41Z` | [`7394ce0d`](https://github.com/minio/mc/commit/7394ce0dd2a80935aded936b09fa12cbb3cb8096) |
 
 - Architetture: `linux/amd64`, `linux/arm64`.
-- Compilatore Go 1.26.10, base `ubi9/ubi-micro:9.8`.
+- Compilatore Go 1.26.11, base `ubi9/ubi-micro:9.8`.
 - Checkout per commit SHA: il build fallisce se il commit non corrisponde.
 - Layout identico all'immagine upstream: base `ubi9/ubi-micro`, binari in `/usr/bin`, stesso
   `docker-entrypoint.sh`, licenze in `/licenses`, patch applicate in `/licenses/patches`.
@@ -101,7 +101,7 @@ Server:
 ```yaml
 services:
   minio:
-    image: ghcr.io/jarvit/minio:RELEASE.2025-10-15T17-29-55Z-jarvit.2
+    image: ghcr.io/jarvit/minio:RELEASE.2025-10-15T17-29-55Z-jarvit.3
     command: server /data --console-address ":9001"
     environment:
       MINIO_ROOT_USER: minio
@@ -113,7 +113,7 @@ services:
 Client (`mc` e' nella stessa immagine):
 
 ```bash
-docker run --rm --entrypoint /bin/sh ghcr.io/jarvit/minio:RELEASE.2025-10-15T17-29-55Z-jarvit.2 \
+docker run --rm --entrypoint /bin/sh ghcr.io/jarvit/minio:RELEASE.2025-10-15T17-29-55Z-jarvit.3 \
   -c 'mc alias set s3 http://minio:9000 minio "$PASSWORD" && mc ls s3/'
 ```
 
@@ -142,14 +142,14 @@ Verifica della firma:
 cosign verify-attestation --type openvex \
   --certificate-identity https://github.com/jarvit/minio-image/.github/workflows/build.yml@refs/heads/main \
   --certificate-oidc-issuer https://token.actions.githubusercontent.com \
-  ghcr.io/jarvit/minio:RELEASE.2025-10-15T17-29-55Z-jarvit.2 > /dev/null
+  ghcr.io/jarvit/minio:RELEASE.2025-10-15T17-29-55Z-jarvit.3 > /dev/null
 ```
 
 Scansione con Trivy (0.75 o successivo), con il VEX scoperto dal registry o passato come file:
 
 ```bash
-trivy image --vex oci --show-suppressed ghcr.io/jarvit/minio:RELEASE.2025-10-15T17-29-55Z-jarvit.2
-trivy image --vex vex/minio.openvex.json --show-suppressed ghcr.io/jarvit/minio:RELEASE.2025-10-15T17-29-55Z-jarvit.2
+trivy image --vex oci --show-suppressed ghcr.io/jarvit/minio:RELEASE.2025-10-15T17-29-55Z-jarvit.3
+trivy image --vex vex/minio.openvex.json --show-suppressed ghcr.io/jarvit/minio:RELEASE.2025-10-15T17-29-55Z-jarvit.3
 ```
 
 Trivy non verifica la firma del VEX scoperto con `--vex oci`: la verifica e' il comando
